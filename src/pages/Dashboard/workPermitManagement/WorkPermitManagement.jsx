@@ -377,10 +377,11 @@ const WorkPermitManagement = () => {
 
       {/* Search */}
       <div className="flex gap-4 justify-between mb-8 flex-wrap">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <Input.Search
             placeholder="Search name or ID"
             size="large"
+            className="w-[300px]"
             onChange={(e) => {
               setSearchTerm(e.target.value);
               setPagination({ page: 1, limit: 10 });
@@ -395,7 +396,7 @@ const WorkPermitManagement = () => {
               setSelectedOccupationStatus(val);
               setPagination({ page: 1, limit: 10 });
             }}
-            className="w-[450px]"
+            className="w-[300px]"
             options={[
               { label: "All", value: "All" },
               { label: "Μισθωτός (Employed)", value: "Μισθωτός" },
@@ -421,6 +422,9 @@ const WorkPermitManagement = () => {
           pageSize: pagination.limit,
           total: workPermitData?.meta?.total,
           onChange: (page, limit) => setPagination({ page, limit }),
+        }}
+        scroll={{
+          x: 750,
         }}
         loading={isLoading || isFetching}
       />

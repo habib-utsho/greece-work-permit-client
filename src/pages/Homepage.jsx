@@ -213,6 +213,9 @@ const Homepage = () => {
               //   onChange: (page, limit) => setPagination({ page, limit }),
               // }}
               loading={isLoading}
+              scroll={{
+                x: 750,
+              }}
             />
           </div>
 

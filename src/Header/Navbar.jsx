@@ -4,7 +4,7 @@ import logoRight from "../assets/logo_el.png";
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between gap-6 p-3">
+    <div className="flex items-center justify-between gap-6 p-3 flex-wrap">
       <img
         className="h-auto w-[200px] "
         src={logoLeft}
