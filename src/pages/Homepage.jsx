@@ -7,6 +7,7 @@ import { useReactToPrint } from "react-to-print";
 import Navbar from "../Header/Navbar";
 import { useLazyGetSingleWorkPermitQuery } from "../redux/api/workPermit/workPermitApi";
 import WorkPermitPDF from "../Components/WorkPermitPDF";
+import MyInp from "../Components/ui/Form/MyInp";
 
 const Homepage = () => {
   const [form] = Form.useForm();
@@ -45,7 +46,7 @@ const Homepage = () => {
       login: "Login",
       email: "Email:",
       password: "Password:",
-      enterEmail: "Enter ID here",
+      enterEmail: "Enter email here",
       enterPassword: "Enter password here",
       submit: "Login",
       welcome: "Hello",
@@ -143,33 +144,26 @@ const Homepage = () => {
               onFinish={handleSubmitId}
               autoComplete="off"
             >
-              <Form.Item
+              <MyInp
+                type={"text"}
                 label={t[language].email}
                 name="email"
                 rules={[
-                  { required: true, message: "Please input your email!" },
+                  { required: true, message: "Please enter your email!" },
                 ]}
-              >
-                <Input
-                  size="large"
-                  placeholder={t[language].enterEmail}
-                  className="rounded-none"
-                />
-              </Form.Item>
-              <Form.Item
+                size="large"
+                placeholder={t[language].enterEmail}
+              />
+              <MyInp
+                type={"password"}
                 label={t[language].password}
                 name="password"
                 rules={[
                   { required: true, message: "Please enter your password!" },
                 ]}
-              >
-                <Input
-                  size="large"
-                  type="password"
-                  placeholder={t[language].enterPassword}
-                  className="rounded-none"
-                />
-              </Form.Item>
+                size="large"
+                placeholder={t[language].enterPassword}
+              />
 
               <Button
                 loading={isLoading}
