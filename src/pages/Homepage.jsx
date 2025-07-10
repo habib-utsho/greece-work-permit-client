@@ -120,7 +120,7 @@ const Homepage = () => {
   return (
     <div className="mx-6">
       {!data ? (
-        <Container className="shadow-xl  mt-[30px]">
+        <Container className="shadow-2xl shadow-[#000000ae]  mt-[30px]">
           <div className="my-4 rounded-md shadow-md bg-white pb-5">
             <Navbar />
             <div className="bg-[#537aa2] text-white py-6 flex items-center justify-between gap-4 px-4 mb-6">
