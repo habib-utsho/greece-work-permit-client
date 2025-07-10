@@ -44,6 +44,7 @@ const Homepage = () => {
   const t = {
     en: {
       login: "Login",
+      logout: "Logout",
       email: "Email:",
       password: "Password:",
       enterEmail: "Enter email here",
@@ -59,6 +60,7 @@ const Homepage = () => {
     },
     gr: {
       login: "Σύνδεση",
+      logout: "Αποσύνδεση",
       email: "Ηλεκτρονική διεύθυνση:",
       password: "Κωδικός:",
       enterEmail: "Εισαγάγετε το αναγνωριστικό εδώ",
@@ -100,13 +102,6 @@ const Homepage = () => {
           >
             {t[language].print}
           </button>
-          <Button
-            type="default"
-            className="text-primary !mx-auto !mt-3 block"
-            onClick={() => window.location.reload()}
-          >
-            {t[language].tryAgain}
-          </Button>
         </Space>
       ),
     },
@@ -187,20 +182,36 @@ const Homepage = () => {
       ) : (
         <div className="my-4 mb-8 px-4  py-8 rounded-md border border-primary flex items-center justify-center bg-white">
           <div className="text-center w-full">
-            {/* Language toggle button */}
-            <Button
-              onClick={() => setLanguage(language === "en" ? "gr" : "en")}
-              className="primary-btn border-none rounded-none ml-auto mb-4 float-right"
-            >
-              {language === "en" ? "English" : "Greek"}
-            </Button>
-            {/* Heading */}
-            <div className="space-y-2 mb-8">
-              <p className="font-semibold">
-                {t[language].welcome}, {workPermitData?.name},
-              </p>
-              <h2 className="font-bold text-xl mb-4">{t[language].message}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3">
+              <div></div>
+              <div className="space-y-2 mb-8">
+                <p className="font-semibold">
+                  {t[language].welcome}, {workPermitData?.name},
+                </p>
+                <h2 className="font-bold text-xl mb-4">
+                  {t[language].message}
+                </h2>
+              </div>
+              {/* Language toggle button */}
+              <div className="flex items-center gap-2 justify-end">
+                <Button
+                  onClick={() => setLanguage(language === "en" ? "gr" : "en")}
+                  className="primary-btn border-none rounded-none"
+                >
+                  {language === "en" ? "English" : "Greek"}
+                </Button>
+                <Button
+                  type="default"
+                  className="text-primary"
+                  onClick={() => window.location.reload()}
+                >
+                  {t[language].logout}
+                </Button>
+              </div>
             </div>
+
+            {/* Heading */}
+
             {/* Table Preview */}
             <Table
               rowKey="_id"
