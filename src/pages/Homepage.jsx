@@ -45,6 +45,7 @@ const Homepage = () => {
     en: {
       login: "Login",
       logout: "Logout",
+      userAuthentication: "User Authentication",
       email: "Email:",
       password: "Password:",
       enterEmail: "Enter email here",
@@ -54,13 +55,18 @@ const Homepage = () => {
       message: "Your work permit is ready to view! 🎉",
       print: "Print",
       tryAgain: "Try Again",
-      instruction: "Please enter your TaxisNet credentials to log in.",
+      instruction: (
+        <p>
+          Please enter your <strong>TaxisNet</strong> credentials to log in.
+        </p>
+      ),
       footer:
         "Interoperability Center of the Ministry of Digital Governance (KE.D)",
     },
     gr: {
       login: "Σύνδεση",
       logout: "Αποσύνδεση",
+      userAuthentication: "Αυθεντικοποίηση Χρήστη",
       email: "Ηλεκτρονική διεύθυνση:",
       password: "Κωδικός:",
       enterEmail: "Εισαγάγετε το αναγνωριστικό εδώ",
@@ -70,8 +76,12 @@ const Homepage = () => {
       message: "Η άδεια εργασίας σας είναι έτοιμη! 🎉",
       print: "Εκτύπωση",
       tryAgain: "Προσπάθησε ξανά",
-      instruction:
-        "Παρακαλώ εισάγετε τα διαπιστευτήριά σας στο TaxisNet για να συνδεθείτε.",
+      instruction: (
+        <p>
+          Παρακαλώ εισάγετε τα διαπιστευτήριά σας στο <strong>TaxisNet</strong>{" "}
+          για να συνδεθείτε.
+        </p>
+      ),
       footer:
         "Κέντρο Διαλειτουργικότητας του Υπουργείου Ψηφιακής Διακυβέρνησης (ΚΕΔ)",
     },
@@ -110,22 +120,24 @@ const Homepage = () => {
   return (
     <div className="mx-6">
       {!data ? (
-        <Container>
+        <Container className="shadow-xl  mt-[30px]">
           <div className="my-4 rounded-md shadow-md bg-white pb-5">
             <Navbar />
-            <div className="bg-[#537aa2] text-white py-6 flex items-center justify-between gap-4 px-4">
+            <div className="bg-[#537aa2] text-white py-6 flex items-center justify-between gap-4 px-4 mb-6">
               <div></div>
-              <div className="font-semibold text-2xl">{t[language].login}</div>
+              <div className="font-semibold text-2xl">
+                {t[language].userAuthentication}
+              </div>
               <Button
                 onClick={() => setLanguage(language === "en" ? "gr" : "en")}
                 className="primary-btn border-none rounded-none relative -left-7 top-3"
               >
-                {language === "en" ? "English" : "Greek"}
+                {language === "en" ? "Ελληνικά" : "English"}
               </Button>
             </div>
 
             <div className="text-center space-y-2">
-              <h2 className="font-semibold text-2xl">{t[language].login}</h2>
+              <h2 className="font-[400] text-3xl">{t[language].login}</h2>
               <p>{t[language].instruction}</p>
             </div>
 
@@ -198,7 +210,7 @@ const Homepage = () => {
                   onClick={() => setLanguage(language === "en" ? "gr" : "en")}
                   className="primary-btn border-none rounded-none"
                 >
-                  {language === "en" ? "English" : "Greek"}
+                  {language === "en" ? "Ελληνικά" : "English"}
                 </Button>
                 <Button
                   type="default"
