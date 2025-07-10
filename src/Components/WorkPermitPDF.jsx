@@ -21,8 +21,7 @@ const WorkPermitPDF = ({ printContentRef, workPermitData }) => {
               rel="noreferrer"
               className=""
             >
-              {/* TODO */}
-              https://upcoming
+              https://oauth2gsisgr.vercel.app
             </a>
           </div>
           <div className="flex items-center justify-between w-full mt-8">
