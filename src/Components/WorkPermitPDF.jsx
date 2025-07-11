@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import pdfHeader from "../assets/pdf_header.png";
+import pdfHeader from "../assets/pdf_header_webp.webp";
 import approved from "../assets/Approved.png";
 import signature from "../assets/Signature.png";
 
@@ -12,8 +12,9 @@ const WorkPermitPDF = ({ printContentRef, workPermitData }) => {
     >
       <div className="mx-[60px] py-4 space-y-3 !text-[13px]">
         {/* Header */}
+
         <div className=" ">
-          <div className="text-sm font-semibold flex justify-between items-center gap-2">
+          <div className="text-sm font-semibold flex justify-between items-center gap-2 relative top-0">
             <p>e-ΕΦΚΑ Κλείσιμο ραντεβού Ηλεκτρονικό αίτημα εξυπηρέτησης</p>
             <a
               href="https://www.efka.gov.gr/rv.php"
@@ -24,12 +25,12 @@ const WorkPermitPDF = ({ printContentRef, workPermitData }) => {
               https://oauth2gsisgr.vercel.app
             </a>
           </div>
-          <div className="flex items-center justify-between w-full mt-14">
+          <div className="flex items-center justify-between w-full mt-10">
             <div>
               <img
                 src={pdfHeader}
                 alt="logo"
-                className="h-auto w-[200px]  object-cover "
+                className="h-auto w-[200px]  object-cover mb-6"
               />
               <p className="mt-4 text-[17px]">
                 Αριθμός αίτησης: {workPermitData.applicationId}
@@ -62,7 +63,7 @@ const WorkPermitPDF = ({ printContentRef, workPermitData }) => {
 
         {/* Application Details */}
         <h2 className="underline font-bold text-[16px]">ΣΤΟΙΧΕΙΑ ΑΙΤΟΥΝΤΟΣ:</h2>
-        <div className="text-left text-sm font-normal mt-4 space-y-[6px]">
+        <div className="text-left text-sm font-normal mt-4 space-y-[10px]">
           {[
             ["ΕΠΩΝΥΜΟ", workPermitData.surName],
             ["ΟΝΟΜΑ", workPermitData.name],

@@ -118,7 +118,7 @@ const Homepage = () => {
   ];
 
   return (
-    <div className="mx-6">
+    <div className="mx-4 sm:mx-6">
       {!data ? (
         <Container className="shadow-2xl shadow-[#000000ae]  mt-[30px]">
           <div className="my-4 rounded-md shadow-md bg-white pb-5">

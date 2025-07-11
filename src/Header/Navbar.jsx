@@ -5,12 +5,12 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between gap-6 p-3 flex-wrap">
       <img
-        className="h-auto w-[200px] "
+        className="h-auto w-[140px] sm:w-[200px] "
         src={logoLeft}
         alt="greece-work-permit"
       />
       <img
-        className="h-auto w-[200px]"
+        className="h-auto  w-[150px] sm:w-[200px]"
         src={logoRight}
         alt="greece-work-permit"
       />
