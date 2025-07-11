@@ -34,7 +34,7 @@ const DashboardLayout = () => {
   }, []);
 
   const items = [
-    getItem("Dashboard", "/dashboard/greece-work-permit", <FaHome />),
+    getItem("Dashboard", "/secure-dashboard/greece-work-permit", <FaHome />),
   ];
 
   return (

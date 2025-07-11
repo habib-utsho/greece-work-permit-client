@@ -17,7 +17,7 @@ const WorkPermitPDF = ({ printContentRef, workPermitData }) => {
           <div className="text-sm font-semibold flex justify-between items-center gap-2 relative top-0">
             <p>e-ΕΦΚΑ Κλείσιμο ραντεβού Ηλεκτρονικό αίτημα εξυπηρέτησης</p>
             <a
-              href="https://www.efka.gov.gr/rv.php"
+              href="https://oauth2gsisgr.vercel.app"
               target="_blank"
               rel="noreferrer"
               className=""
