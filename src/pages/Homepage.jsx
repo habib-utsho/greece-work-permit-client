@@ -52,7 +52,7 @@ const Homepage = () => {
       enterPassword: "Enter password here",
       submit: "Login",
       welcome: "Hello",
-      message: "Your work permit is ready to view! 🎉",
+      message: "Your work permit is ready to view!",
       print: "Print",
       tryAgain: "Try Again",
       instruction: (
@@ -73,7 +73,7 @@ const Homepage = () => {
       enterPassword: "Εισαγάγετε τον κωδικό πρόσβασης εδώ",
       submit: "Σύνδεση",
       welcome: "Γειά σου",
-      message: "Η άδεια εργασίας σας είναι έτοιμη! 🎉",
+      message: "Η άδεια εργασίας σας είναι έτοιμη!",
       print: "Εκτύπωση",
       tryAgain: "Προσπάθησε ξανά",
       instruction: (
